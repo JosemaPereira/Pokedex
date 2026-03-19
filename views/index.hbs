@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Pokédex</h1>
+      <section>
+        <h2>Pokémon</h2>
+        <div id="pokemon-list">
+          {{#if pokemon.length}}
+          <ul>
+            {{#each pokemon}}
+              <li><strong>{{name}}</strong> ({{type}}) - HP: {{hp}}, ATK: {{attack}}, DEF: {{defense}}, SPD: {{speed}}</li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p>No Pokémon yet.</p>
+          {{/if}}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

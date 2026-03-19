@@ -7,12 +7,10 @@ import { join } from 'path';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Server-side rendered HTML templates (Nest "views")
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
 
-  // Static client assets (Nest "frontend")
-  app.use('/static', express.static(join(__dirname, '..', 'frontend')));
+  app.use('/static', express.static(join(__dirname, '..', 'static')));
 
   await app.listen(process.env.PORT ?? 3000);
 }

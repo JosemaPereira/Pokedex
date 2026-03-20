@@ -1,6 +1,6 @@
 import { Controller, Get, Render } from '@nestjs/common';
-import { PokemonService } from '../pokemon/pokemon.service';
-import type { Pokemon } from '../pokemon/interfaces/pokemon.interface';
+import { PokemonService } from '../../backend/pokemon/pokemon.service';
+import type { Pokemon } from '../../backend/pokemon/interfaces/pokemon.interface';
 
 @Controller()
 export class PokedexController {

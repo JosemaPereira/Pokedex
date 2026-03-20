@@ -1,10 +1,10 @@
 {
   "name": "pokedex",
   "version": "0.0.2",
-  "description": "",
-  "author": "",
+  "description": "NestJS project for a simple pokedex",
+  "author": "Josema Pereira <josema.pereira@example.com>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

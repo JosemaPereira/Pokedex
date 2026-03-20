@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { PokemonModule } from './backend/pokemon/pokemon.module';
-import { PokedexModule } from './frontened/pokedex/pokedex.module';
+import { PokemonModule } from './pokemon/pokemon.module';
+import { PokedexModule } from './pokedex/pokedex.module';
 
 @Module({
   imports: [PokemonModule, PokedexModule],

@@ -1,0 +1,21 @@
+<section>
+  <h2>Pokémon</h2>
+  <div id="pokemon-list">
+    {{#if pokemon.length}}
+      <ul>
+        {{#each pokemon}}
+          <li>
+            <strong>{{name}}</strong>
+            <span>({{type}})</span>
+            <span>HP: {{hp}}</span>
+            <span>ATK: {{attack}}</span>
+            <span>DEF: {{defense}}</span>
+            <span>SPD: {{speed}}</span>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No Pokémon yet.</p>
+    {{/if}}
+  </div>
+</section>

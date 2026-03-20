@@ -5,7 +5,21 @@ import request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from './../src/app.module';
 import * as express from 'express';
+import hbs = require('hbs');
 import { join } from 'path';
+
+function registerPartials(partialsDir: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    hbs.registerPartials(partialsDir, (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      resolve();
+    });
+  });
+}
 
 describe('PagesController (e2e)', () => {
   let app: INestApplication<App>;
@@ -22,8 +36,11 @@ describe('PagesController (e2e)', () => {
       join(process.cwd(), 'views'),
     );
     (app as NestExpressApplication).setViewEngine('hbs');
+    await registerPartials(join(process.cwd(), 'views', 'layouts'));
+    await registerPartials(join(process.cwd(), 'views', 'partials'));
     (app as NestExpressApplication).use(
-      express.static(join(process.cwd(), 'frontend')),
+      '/static',
+      express.static(join(process.cwd(), 'static')),
     );
 
     await app.init();

@@ -21,7 +21,7 @@ It is a small Pokédex app used to practice core NestJS concepts:
 
 ### Web
 
-- `GET /` → renders the Pokédex page (`src/frontened/views/index.hbs`)
+- `GET /` → renders the Pokédex page (`views/pages/index.hbs`)
 
 ### API
 
@@ -45,11 +45,46 @@ Example `POST` body:
 
 - `src/main.ts`: app bootstrap, view engine setup, static files
 - `src/app.module.ts`: root module
-- `src/backend/pokemon/*`: API controller, service, module, DTO and types
-- `src/frontened/pokedex/*`: web controller/module for SSR page
-- `src/frontened/views/index.hbs`: Handlebars template
-- `src/frontened/static/styles.css`: styles for the page
+- `src/pokemon/*`: API controller, service, module, DTO and types
+- `src/pokedex/*`: web controller/module for SSR page
+- `views/layouts/*`: shared Handlebars layouts
+- `views/partials/*`: reusable Handlebars partials
+- `views/pages/*`: page templates rendered by controllers
+- `static/styles.css`: styles for the page
 - `test/`: e2e tests
+
+```text
+.
+├── src
+│   ├── app.module.ts
+│   ├── main.ts
+│   ├── pokedex
+│   │   ├── pokedex.controller.ts
+│   │   └── pokedex.module.ts
+│   └── pokemon
+│       ├── dto
+│       │   └── create-pokemon.dto.ts
+│       ├── interfaces
+│       │   └── pokemon.interface.ts
+│       ├── pokemon.controller.ts
+│       ├── pokemon.module.ts
+│       ├── pokemon.service.spec.ts
+│       └── pokemon.service.ts
+├── views
+│   ├── layouts
+│   │   └── main.hbs
+│   ├── pages
+│   │   └── index.hbs
+│   └── partials
+│       ├── page-header.hbs
+│       └── pokemon-list.hbs
+├── static
+│   └── styles.css
+├── test
+│   └── app.e2e-spec.ts
+├── README.md
+└── package.json
+```
 
 ## Useful commands
 

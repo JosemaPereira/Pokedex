@@ -1,6 +1,6 @@
 {
   "name": "pokedex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NestJS project for a simple pokedex",
   "author": "Josema Pereira <josema.pereira@example.com>",
   "private": true,
